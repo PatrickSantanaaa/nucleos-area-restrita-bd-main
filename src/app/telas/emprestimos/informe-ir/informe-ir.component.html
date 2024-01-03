@@ -1,0 +1,27 @@
+<p-fieldset legend=" Informe para IR" class="field tamanho">
+
+<form [formGroup]="formulario">
+
+  <div style="display: flex; justify-content: center;">
+    <mat-form-field appearance="outline" class="input10" *ngIf="!popUpMensagem">
+      <mat-label>Exercício</mat-label>
+      <mat-select formControlName="ano">
+        <mat-option></mat-option>
+        <mat-option  *ngFor="let item of listaMesAno; index as i;" [value]="item.anoReferencia">{{ item.anoReferencia}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button *ngIf="!popUpMensagem" (click)="enviaFormulario()">
+      <p>Gerar PDF</p>
+      <i class="fa-regular fa-file-pdf"></i>
+    </button>
+
+
+    <p-messages class="informe" [(value)]="messages" [enableService]="false" [closable]="false" *ngIf="popUpMensagem"></p-messages>
+  </div>
+
+
+</form>
+</p-fieldset>
+
+<p-toast></p-toast>

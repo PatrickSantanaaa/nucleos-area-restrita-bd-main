@@ -1,0 +1,83 @@
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+.button{
+  background: none !important;
+  border: none;
+  margin: 0px 7px 0 0;
+  z-index: 1;
+}
+
+.buttonDisable{
+  background: var(--azul-primario);
+  border: none;
+  border-radius: 5px;
+  width: 94%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.5;
+  color:white;
+  pointer-events: none;
+}
+
+.mensagem-resposta {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.iconcheck{
+  font-size: 50px;
+  padding-bottom: 30px;
+  color: green;
+}
+
+.mat-icon {
+  color: var(--azul-primario)
+}
+
+.posicao{
+  width: 400px;
+  justify-content: center;
+  display: inline-grid;
+  padding-bottom: 30px;
+}
+
+.field {
+  width: 100% !important;
+}
+
+.divButton {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  color: white
+}
+
+.tamanho {
+  width: 500px !important;
+}

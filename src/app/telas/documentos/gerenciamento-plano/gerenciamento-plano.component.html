@@ -1,0 +1,17 @@
+<p-fieldset legend="Transferência de Gerenciamento de Plano" class="field tamanho">
+
+  <div class="card flex justify-content-center; margin-top: 10px !important" >
+    <p-tree [value]="files" class="w-full md:w-30rem" *ngIf="files.length > 0">
+      <ng-template let-node pTemplate="url">
+          <a (click)="enviaParaLink(node.data , node.label)" target="_blank" rel="noopener noreferrer" class="text-700 hover:text-primary">{{ node.label }}</a>
+      </ng-template>
+      <ng-template let-node pTemplate="default">
+          <b>{{ node.label }}</b>
+      </ng-template>
+    </p-tree>
+  </div>
+
+  <p-messages class="informe" [(value)]="messages" [enableService]="false" [closable]="false" *ngIf="files.length === 0"></p-messages>
+</p-fieldset>
+
+<p-toast></p-toast>

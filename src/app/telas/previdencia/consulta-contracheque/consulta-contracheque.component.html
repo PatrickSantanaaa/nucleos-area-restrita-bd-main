@@ -1,0 +1,25 @@
+<p-fieldset legend="Consulta Contracheque" class="field tamanho">
+
+  <p-messages class="informe" [(value)]="messages" [enableService]="false" [closable]="false" *ngIf="popUpMensagem"></p-messages>
+
+  <form [formGroup]="formulario">
+    <div style="display: flex; justify-content: center;">
+
+      <mat-form-field appearance="outline" class="input10" *ngIf="!popUpMensagem">
+        <mat-label>Ano</mat-label>
+        <mat-select formControlName="ano">
+          <mat-option></mat-option>
+          <mat-option  *ngFor="let item of listaMesAno; index as i;" [value]="item.codigo">{{ item.descricao | formataMesAno}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button *ngIf="!popUpMensagem" (click)="enviaFormulario()">
+        <p>Gerar PDF</p>
+        <i class="fa-regular fa-file-pdf"></i>
+      </button>
+    </div>
+  </form>
+
+</p-fieldset>
+
+<p-toast></p-toast>

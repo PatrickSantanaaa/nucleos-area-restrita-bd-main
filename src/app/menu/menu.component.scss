@@ -1,0 +1,32 @@
+.content{
+  background: linear-gradient(to right, #0E5B85, rgb(17 38 118)) rgb(255 255 255);
+}
+
+.contentCard{
+  padding: 5px;
+  background-image: url('https://img.freepik.com/vetores-gratis/abstrato-azul-classico_23-2148420118.jpg?w=996&t=st=1698844323~exp=1698844923~hmac=9fb7bcfaaf8499700ed2857140e584be5f949bc1bcc005194068fffa23f29b9e');
+  background-size: cover;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+
+}
+
+.card{
+  background-color: white;
+  height: 80%;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.cardContent{
+  justify-content: center;
+  background-image: url(../../assets/img/fundo2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+  padding: 1% 2% 0 2%;
+  overflow: auto;
+  height: calc(100% - 25px - 64px);
+}

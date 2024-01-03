@@ -1,0 +1,40 @@
+<p-fieldset legend="Reserva de Poupança" class="field tamanho" >
+
+  <div style="display: flex; text-align: left;">
+    <h3 style="margin-left: 6px;  color: black; margin-top: 15px; width: 100%;">Saldo de reserva atual : </h3>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <div class="card">
+
+      <div style="display: flex; justify-content: center; padding-top: 5px;">
+        <h1 style="color: white; font-weight: 900 !important; font-size: 3rem !important; padding: 20px 0px; display: flex;">
+          <!-- <p style="font-size: 1.8rem; margin-bottom: 5px;">R$</p>  -->
+          {{saldoAtual | currency: 'BRL'}}</h1>
+
+      </div>
+
+      <div style="display: flex" id="chart">
+        <apx-chart
+          [series]="chartOptions.series!"
+          [chart]="chartOptions.chart!"
+          [xaxis]="chartOptions.xaxis!"
+          [stroke]="chartOptions.stroke!"
+          [dataLabels]="chartOptions.dataLabels!"
+          [yaxis]="chartOptions.yaxis!"
+          [labels]="chartOptions.labels!"
+          [legend]="chartOptions.legend!"
+          [grid]="chartOptions.grid!"
+          [title]="chartOptions.title!"
+          [subtitle]="chartOptions.subtitle!"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-bottom: 11px; padding-right: 15px; padding-top: 10px;">
+    <h3 style="margin-left: 6px; color: black">O valor da reserva de poupança acima refere-se ao valor líquido.</h3>
+  </div>
+</p-fieldset>
+
+<p-toast></p-toast>

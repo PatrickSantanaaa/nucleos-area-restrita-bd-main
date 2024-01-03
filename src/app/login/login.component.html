@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="logo">
+    <img src="./assets/img/logo.png" alt="Logo" class="logo-image">
+  </div>
+   <!-- Formulário de Login  -->
+    <div class="login-form" *ngIf="isLoginFormVisible">
+      <form [formGroup]="formulario">
+        <div>
+          <mat-form-field appearance="outline" class="input22">
+            <mat-label>CPF</mat-label>
+            <input matInput formControlName="login" mask="000.000.000-00">
+          </mat-form-field>
+        </div>
+
+        <div class="m-top">
+          <mat-form-field appearance="outline" class="input22">
+            <mat-label>Senha</mat-label>
+            <input matInput formControlName="senha" type="password">
+          </mat-form-field>
+        </div>
+
+        <div class="m-top">
+          <button [ngClass]="{'buttonDisable': loading, 'classbutton': !loading}" type="button" (click)="login()" style="margin-top: 15px">
+            <i class="fa-solid fa-circle-notch spinner" *ngIf="loading"></i>
+            <i class="fa-solid fa-check" *ngIf="!loading"></i>
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+ <!-- Formulário de Login  -->
+
+ <!-- Formulário de Esqueceu Senha  -->
+ <div class="login-form" *ngIf="isForgotPasswordVisible">
+  <div class="mensagem-resposta" *ngIf="respostaRequisicao">
+    <div class="iconcheck">
+    <i class="fa-regular fa-circle-check" style="font-weight: 700;"></i>
+  </div>
+    {{ respostaRequisicao }}
+  </div>
+  <form [formGroup]="formularioEsqueceuSenha" *ngIf="!respostaRequisicao">
+    <div class="m-top">
+    <mat-form-field appearance="outline" class="input22">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="numeroCPF" mask="000.000.000-00">
+    </mat-form-field>
+    </div>
+    <div class="m-top">
+    <mat-form-field appearance="outline"  class="input22">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput formControlName="dataNascimento" dateFormatter [matDatepicker]="dataNascimento">
+      <mat-datepicker-toggle matSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+      <mat-datepicker #dataNascimento></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="m-top">
+    <!-- <button class="classbutton" type="button" [routerLink]="['/menu']">Enviar</button> -->
+    <button [ngClass]="{'buttonDisable': loadingEsqSenha, 'classbutton': !loadingEsqSenha}" type="button" (click)="esqueceuSenha()" style="margin-top: 15px">
+      <i class="fa-solid fa-circle-notch spinner" *ngIf="loadingEsqSenha"></i>
+      <i class="fa-solid fa-check" *ngIf="!loadingEsqSenha"></i>
+      Enviar
+    </button>
+  </div>
+  </form>
+</div>
+ <!-- Formulário de Esqueceu Senha  -->
+
+  <!-- Muda os Formulários  -->
+  <div class="links" style="padding-top: 30px;">
+    <a class="link cards" href="javascript:void(0);" (click)="toggleForm('login')" *ngIf="!isLoginFormVisible">Login</a>
+    <a class="link cards" href="javascript:void(0);" (click)="toggleForm('forgotPassword')" *ngIf="!isForgotPasswordVisible">Esqueceu a Senha?</a>
+  </div>
+ <!-- Muda os Formulários    -->
+
+</div>
+
+<div class="container">
+  <section>
+    <div class="background">
+      <img src="./assets/img/fundo-bd.jpg" class="fundo-image">
+    </div>
+
+    <div class="content">
+
+      <!-- Informações à esquerda -->
+      <div class="informacoes">
+        <p class="fontP">Portal do Participante</p>
+        <p>
+          Garantimos um futuro seguro para nossos participantes e seus familiares
+        </p>
+      </div>
+
+      <div class="mestra-login-footer">
+        <div class="row" style="padding-bottom: 20px;">
+          <a class="link" href="#">Canais de Suporte</a><span class="espaco"></span>
+          <a class="link" href="#">Políticas de Privacidade</a>
+        </div>
+        <div class="row espacamento2">
+          <p>Copyright © 2023 - Mestra Informática</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<p-toast></p-toast>

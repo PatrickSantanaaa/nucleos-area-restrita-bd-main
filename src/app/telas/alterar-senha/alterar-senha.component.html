@@ -1,0 +1,56 @@
+<p-fieldset legend="Alterar Senha" class="field tamanho">
+  <div class="mensagem-resposta" *ngIf="respostaRequisicao">
+    <div class="iconcheck">
+    <i class="fa-regular fa-circle-check" style="font-weight: 700;"></i>
+  </div>
+    {{ respostaRequisicao }}
+  </div>
+
+  <form [formGroup]="formulario" *ngIf="!respostaRequisicao">
+  <div class="conteudo">
+    <div>
+    <mat-form-field appearance="outline" class="input20">
+      <mat-label>Senha Atual</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="senhaAtual">
+      <button class="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline" class="input20">
+      <mat-label>Nova Senha</mat-label>
+      <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="novaSenha">
+      <button class="button" mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+        <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline" class="input20">
+      <mat-label>Confirmar Nova Senha</mat-label>
+      <input matInput [type]="hide3 ? 'password' : 'text'" formControlName="confirmacaoSenha">
+      <button class="button" mat-icon-button matSuffix (click)="hide3 = !hide3" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide3">
+        <mat-icon>{{hide3 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+  <div class="flex m-top">
+    <button [ngClass]="{'buttonDisable': loading, 'classbutton': !loading}" type="button" (click)="alterarSenha()">
+      <i class="fa-solid fa-circle-notch spinner" *ngIf="loading"></i>
+      <i class="fa-solid fa-check" *ngIf="!loading"></i>
+      Salvar
+    </button>
+  </div>
+
+
+  <!-- <div class="mensagem-resposta" *ngIf="respostaRequisicaoError">
+    {{ respostaRequisicaoError }}
+  </div> -->
+</form>
+
+</p-fieldset>
+<p-toast></p-toast>

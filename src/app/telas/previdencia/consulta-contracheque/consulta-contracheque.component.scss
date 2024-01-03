@@ -1,0 +1,163 @@
+.tamanho {
+  width: 600px !important;
+  height: 500px !important;
+}
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+.button{
+  background: none !important;
+  border: none;
+  margin: 0px 7px 0 0;
+  z-index: 1;
+}
+
+:host ::ng-deep.p-message-wrapper {
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 12px;
+  color: var(--azul-primario);
+}
+:host ::ng-deep.p-element.p-icon-wrapper {
+  color: var(--azul-primario);
+}
+:host ::ng-deep.p-message-info.p-message {
+  background-color:  #0d4f732f;
+  border-left:  5px solid var(--azul-primario);
+}
+
+button {
+  background-color: #106ea0;
+  border: 1px solid #106ea0;
+  padding: 5px;
+  position: relative;
+  width: 2em;
+  height: 31px;
+  top: 13px;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.4em;
+}
+
+button i {
+  position: absolute;
+  top: 0.4em;
+  left: 8px;
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+  color: #fff;
+}
+
+button p {
+  position: absolute;
+  top: 0.35em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.3s;
+  height: 1em;
+  fill: #fff;
+  color: transparent;
+}
+
+button:hover i {
+  left: 0.5em;
+  color: #fff
+}
+
+button:hover p {
+  opacity: 1;
+  color: #fff
+}
+
+button:hover {
+  background-color: #0e5c86;
+  padding: 5px;
+  position: relative;
+  width: 7.2em;
+  height: 31px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 0.4em;
+}
+
+
+// button {
+//   width: 140px;
+//   height: 31px;
+//   margin-top: 14px;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   border: none;
+//   border-radius: 5px;
+//   box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+//   background: #1378af;
+//  }
+
+//  button, button span {
+//   transition: 200ms;
+//  }
+
+//  button .text {
+//   transform: translateX(10px);
+//   color: white;
+//   font-weight: bold;
+//  }
+
+//  button .icon {
+//   position: absolute;
+//   border-left: 1px solid #0e5c86;
+//   transform: translateX(90px);
+//   height: 29px;
+//   width: 40px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//  }
+
+//  button svg {
+//   width: 15px;
+//   fill: #eee;
+//  }
+
+//  button:hover {
+//   background: #0e5c86;
+//  }
+
+//  button:hover .text {
+//   color: transparent;
+//  }
+
+//  button:hover .icon {
+//   width: 150px;
+//   border-left: none;
+//   transform: translateX(0);
+//  }
+
+//  button:focus {
+//   outline: none;
+//  }
+
+//  button:active .icon svg {
+//   transform: scale(0.8);
+//  }
+
+
+

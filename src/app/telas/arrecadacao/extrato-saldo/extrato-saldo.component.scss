@@ -1,0 +1,53 @@
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+.button{
+  background: none !important;
+  border: none;
+  margin: 0px 7px 0 0;
+  z-index: 1;
+}
+
+
+.mensagem-resposta {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.iconcheck{
+  font-size: 50px;
+  padding-bottom: 30px;
+  color: green;
+}
+
+.mat-icon {
+  color: var(--azul-primario)
+}
+
+:host ::ng-deep .p-togglebutton.p-button.p-highlight {
+  background: var(--azul-primario);
+}
+
+:host ::ng-deep .p-togglebutton.p-button.p-highlight:hover {
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+}
+
+
+.tamanho {
+  width: 500px !important;
+}

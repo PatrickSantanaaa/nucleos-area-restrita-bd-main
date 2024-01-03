@@ -1,0 +1,46 @@
+<p-fieldset legend="Declaração Acordo FATCA - Residente Fiscal Estrangeiro ou Reportável" class="field">
+
+  <div class="flex m-top">
+    <p-checkbox  [binary]="true" inputId="binary" [(ngModel)]="reportavel"></p-checkbox>
+
+    <p class="classP">Sou Reportável ou Cidadão Norte-Americano ou Residente Fiscal nos EUA</p>
+  </div>
+
+  <div>
+    <p class="classP">Informo meu número de identificação para fins fiscais nos EUA. TIN-Taxpayer Identification Number. SSN-Social Security Number</p>
+  </div>
+
+  <mat-form-field appearance="outline" class="input20" [ngClass]="{'desabilita': !reportavel}">
+    <input matInput type="text" [disabled]="!reportavel">
+  </mat-form-field>
+
+  <div class="flex m-top">
+    <p-checkbox  [binary]="true" inputId="binary" [(ngModel)]="cidadania"></p-checkbox>
+
+    <p class="classP">Outra Cidadania</p>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline" class="input26" [ngClass]="{'desabilita': !cidadania}">
+      <mat-label>Qual é a sua cidadania?</mat-label>
+      <input matInput type="text" [disabled]="!cidadania">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input20" [ngClass]="{'desabilita': !cidadania}">
+      <mat-label>Número do Documento</mat-label>
+      <input matInput type="text" [disabled]="!cidadania">
+    </mat-form-field>
+  </div>
+
+  <div class="flex m-top">
+    <p-checkbox  [binary]="true" inputId="binary" [(ngModel)]="confirma"></p-checkbox>
+
+    <p class="classP">Para fins de direito, responsabilizo-me por todas as informações declaradas, necessárias à minha adesão como Participante deste plano e comprometo-me a informar, de imediato, sempre que ocorrer alterações em meus dados cadastrais, assim como nas condições de FATCA.</p>
+  </div>
+
+  <div class="flex m-top">
+    <button [ngClass]="{'buttonDisable': !confirma, 'classbutton': confirma}" type="button">
+      <i class="fa-solid fa-check"></i> Salvar
+    </button>
+  </div>
+</p-fieldset>

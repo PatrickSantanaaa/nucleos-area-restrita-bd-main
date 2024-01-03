@@ -1,0 +1,138 @@
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 100% !important;
+  height: 40px;
+  padding: 0px 10px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.p-fieldset {
+  width: 100% !important;
+  display: block;
+}
+
+.tamanho {
+  width: 100% !important;
+  display: block !important;
+}
+
+.input-text{
+  border-radius: 5px;
+  height: 25px;
+  border: 1px solid rgb(205, 205, 205);
+  padding-left: 7px;
+}
+
+.box {
+  width: 48%; /* para deixar algum espaço entre as divs */
+  display: inline-block;
+  box-sizing: border-box; /* Considera padding e borda dentro da largura */
+  padding: 10px; /* Apenas para ilustração */
+  margin: 1%; /* Adiciona algum espaço entre as divs */
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+:host ::ng-deep.flex {
+  justify-content: right !important;
+  margin: 0px;
+}
+
+.proximo {
+  color: white!important; background-color: #157cb4!important; border-radius: 8px!important;
+
+  &:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+}
+.proximo:hover {
+  background-color: #08354e;
+}
+
+
+.input-text {
+  height: 26px;
+  position: relative;
+  bottom: 4px;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.button{
+  background: none !important;
+  border: none;
+  margin: 0px 7px 0 0;
+  z-index: 1;
+}
+
+.buttonDisable{
+  background: var(--azul-primario);
+  border: none;
+  border-radius: 5px;
+  width: 94%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.5;
+  color:white;
+  pointer-events: none;
+}
+
+.mensagem-resposta {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.iconcheck{
+  font-size: 50px;
+  padding-bottom: 30px;
+  color: green;
+}
+
+.mat-icon {
+  color: var(--azul-primario)
+}
+
+.botoes {
+  color: white;
+  background-color: #157cb4;
+  margin-right: 8px;  
+  width: 80px !important;
+  border-radius: 8px;
+}
+
+.posicao{
+  width: 188px;
+  display: inline-grid;
+  padding-bottom: 30px;
+}
+
+.field {
+  width: 100% !important;
+}
+
+.divButton {
+  justify-content: center;
+  display: flex;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  color: white
+}

@@ -1,0 +1,34 @@
+<p-fieldset legend="Trocar Participante" class="field tamanho">
+  <form [formGroup]="formulario">
+
+  <div class="posicao" style="margin-top: 12px;">
+      <p>Inscrição</p>
+      <input class="input-text" formControlName="numeroInscricao" matInput type="text" mask="000000000">
+  </div>
+
+  <div class="posicao" style="margin-top: 12px;">
+      <p>Sequencial</p>
+      <input class="input-text input6" formControlName="sequencialBeneficiario" matInput type="text" mask="00">
+  </div>
+
+  <div class="flex m-top" style="justify-content: center;">
+    <div class="divButton">
+      <div style="display: flex; justify-content: end;">
+        <button class="botoes"  [ngClass]="{'buttonDisable': loadingVoltar || !podeVoltarLogin(), 'classbutton': !loadingVoltar}"
+          type="button" (click)="voltarLogin()">
+          <i class="fa-solid fa-circle-notch spinner" *ngIf="loadingVoltar"></i>
+          <i class="fa-solid fa-rotate-left"  *ngIf="!loadingVoltar"></i>
+          Voltar
+      </button>
+
+        <button  class="botoes" [ngClass]="{'buttonDisable': loading, 'classbutton': !loading}" type="button" (click)="trocarParticipante()">
+          <i class="fa-solid fa-circle-notch spinner" *ngIf="loading"></i>
+           Trocar<i class="fa-solid fa-check" *ngIf="!loading" style="margin-left: 5px;"></i>
+        </button>
+      </div>
+  </div>
+</div>
+
+  </form>
+  </p-fieldset>
+

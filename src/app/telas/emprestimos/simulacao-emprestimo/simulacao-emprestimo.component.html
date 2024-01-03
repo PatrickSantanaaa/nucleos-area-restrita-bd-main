@@ -1,0 +1,261 @@
+<p-fieldset legend="Simulação de Empréstimo" class="field tamanho">
+
+  <mat-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup" style="border-radius: 14px;">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Informações Básicas</ng-template>
+
+        <!-- <p-messages class="informe" [(value)]="messages" [enableService]="false" [closable]="false"></p-messages> -->
+        <p-messages severity="info" summary="Informe">
+          <ng-template pTemplate>
+              <svg class="info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_5)"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.11101 12.8203C4.26215 13.5895 5.61553 14 7 14C8.85652 14 10.637 13.2625 11.9497 11.9497C13.2625 10.637 14 8.85652 14 7C14 5.61553 13.5895 4.26215 12.8203 3.11101C12.0511 1.95987 10.9579 1.06266 9.67879 0.532846C8.3997 0.00303296 6.99224 -0.13559 5.63437 0.134506C4.2765 0.404603 3.02922 1.07129 2.05026 2.05026C1.07129 3.02922 0.404603 4.2765 0.134506 5.63437C-0.13559 6.99224 0.00303296 8.3997 0.532846 9.67879C1.06266 10.9579 1.95987 12.0511 3.11101 12.8203ZM3.75918 2.14976C4.71846 1.50879 5.84628 1.16667 7 1.16667C8.5471 1.16667 10.0308 1.78125 11.1248 2.87521C12.2188 3.96918 12.8333 5.45291 12.8333 7C12.8333 8.15373 12.4912 9.28154 11.8502 10.2408C11.2093 11.2001 10.2982 11.9478 9.23232 12.3893C8.16642 12.8308 6.99353 12.9463 5.86198 12.7212C4.73042 12.4962 3.69102 11.9406 2.87521 11.1248C2.05941 10.309 1.50384 9.26958 1.27876 8.13803C1.05367 7.00647 1.16919 5.83358 1.61071 4.76768C2.05222 3.70178 2.79989 2.79074 3.75918 2.14976ZM7.00002 4.8611C6.84594 4.85908 6.69873 4.79698 6.58977 4.68801C6.48081 4.57905 6.4187 4.43185 6.41669 4.27776V3.88888C6.41669 3.73417 6.47815 3.58579 6.58754 3.4764C6.69694 3.367 6.84531 3.30554 7.00002 3.30554C7.15473 3.30554 7.3031 3.367 7.4125 3.4764C7.52189 3.58579 7.58335 3.73417 7.58335 3.88888V4.27776C7.58134 4.43185 7.51923 4.57905 7.41027 4.68801C7.30131 4.79698 7.1541 4.85908 7.00002 4.8611ZM7.00002 10.6945C6.84594 10.6925 6.69873 10.6304 6.58977 10.5214C6.48081 10.4124 6.4187 10.2652 6.41669 10.1111V6.22225C6.41669 6.06754 6.47815 5.91917 6.58754 5.80977C6.69694 5.70037 6.84531 5.63892 7.00002 5.63892C7.15473 5.63892 7.3031 5.70037 7.4125 5.80977C7.52189 5.91917 7.58335 6.06754 7.58335 6.22225V10.1111C7.58134 10.2652 7.51923 10.4124 7.41027 10.5214C7.30131 10.6304 7.1541 10.6925 7.00002 10.6945Z" fill="currentColor"></path></g><defs><clipPath id="url(#pn_id_5)"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg>
+              <strong>Informe</strong>
+              <div class="ml-2">
+                <p>Prezado(a) Participante, A leitura das regras da carteira de empréstimos é imprescindível para sua concessão. Leia com atenção a
+                  <a href="https://portal.nucleos.com.br/nucleos_portal/InstrucaoNormativa.pdf" class="link" target="_blank">Instrução Normativa 001/2012 de 25/01/2012</a>.</p>
+                <p>Favor digitar as informações solicitadas, que deverão ser preenchidas com base no seu último contracheque.</p>
+              </div>
+          </ng-template>
+      </p-messages>
+        <div class="card">
+          <p class="titulo" >Proventos</p>
+
+          <div style="display: flex; flex-direction: column; padding-left: 3px; padding-bottom: 8px; align-items: end; width: 100%;">
+            <div class="row novoInput">
+              <p class="afastamento">Salário Base Mensal </p>
+              <input type="text" style=" height: 26px; position: relative; bottom: 4px; border: 1px solid #cfcece;
+              border-radius: 4px; margin-right: 12px;" formControlName="valorSalarioBruto"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+            </div>
+            <!-- <mat-form-field>
+              <mat-label>SALÁRIO BASE MENSAL </mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="valorSalarioBruto" required>
+            </mat-form-field> -->
+
+            <div class="row novoInput">
+              <p class="afastamento">Adicional Por Tempo de Serviço </p>
+              <input type="text" style=" height: 26px; position: relative; bottom: 4px; border: 1px solid #cfcece;
+              border-radius: 4px;margin-right: 12px;" formControlName="valorAdicionalTempoServico"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+            </div>
+
+            <div class="row novoInput">
+              <p class="afastamento">Gratificação Cargo De Confiança </p>
+              <input type="text" style="height: 26px; position: relative; bottom: 4px; border: 1px solid #cfcece;
+              border-radius: 4px;margin-right: 12px;" formControlName="valorGratificacao"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+
+          <p class="titulo">Descontos</p>
+
+          <div class="row novoInput">
+            <p class="afastamento">Somatório Das Parcelas Dos Empréstimos e Financiamentos Consignados Com Outras Instituições </p>
+            <input type="text" style="height: 26px; position: relative; bottom: 4px; border: 1px solid #cfcece;
+            border-radius: 4px; margin-right: 12px;" formControlName="valorSomatorioParcelasEmprestimos"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+          </div>
+
+          <div class="row novoInput">
+            <p class="afastamento">Somatório Das Pensões Alimentícias </p>
+            <input type="text" style="height: 26px; position: relative; bottom: 4px; border: 1px solid #cfcece;
+            border-radius: 4px; margin-right: 12px;" formControlName="valorSomatorioPensoesAlimenticias"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+          </div>
+        </div>
+
+        <p style="line-height: 2em; padding-top: 8px;"><input type="checkbox" style="padding-top: 10px; margin-right: 8px;width: 14px; height: 14px;" formControlName="aceite">Atesto a veracidade das informações prestadas, bem como que estou ciente e concordo com as regras de empréstimos que constam da <a class="link" href="https://portal.nucleos.com.br/nucleos_portal/InstrucaoNormativa.pdf"  target="_blank">Instrução Normativa 001/2012 de 25/01/2012.</a></p>
+
+        <div style="text-align: right;">
+          
+          <button class="proximo" 
+          [disabled]="!firstFormGroup.valid"
+          mat-button
+          (click)="enviaPrimeiroStep(stepper)">
+          <mat-progress-spinner
+              class="loading"
+              [mode]="'indeterminate'"
+              *ngIf="loading"
+              diameter="14">
+          </mat-progress-spinner>
+            Avançar<i class="fa-solid fa-chevron-right"></i>  
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Simulação">
+      <form [formGroup]="secondFormGroup" id="impressao">
+
+          <ng-template matStepLabel>Simulação</ng-template>
+
+        <p-messages class="informe" [(value)]="messages2" [enableService]="false" [closable]="false"></p-messages>
+
+          <div class="card">
+            <p class="titulo" >Disponibilidade para Crédito</p>
+
+            <div style="display: flex; padding-left: 3px; padding-bottom: 8px; flex-direction: column;">
+              <div class="row novoInput">
+                <p class="afastamento">Valor Máximo Disponível </p>
+                <input type="text"  formControlName="valorMaximoPerito" maxlength="14" currencyMask [options]="{prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Valor Solicitado </p>
+                <input type="text" formControlName="valorSolicitado"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Número de Parcelas (em meses) </p>
+                <input type="number" style="text-align: right;"  formControlName="numeroParcelas">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Saldo Devedor de Empréstimo Vigente No Nucleos </p>
+                <input type="text" formControlName="valorSaldoDevedor"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">IOF </p>
+                <input type="text" formControlName="valorIof"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Taxa Administrativa </p>
+                <input type="text" formControlName="valorTaxaAdministracao"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Valor a Ser Creditado </p>
+                <input type="text" formControlName="valorCredito"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Data a Ser Creditado </p>
+                <input type="date" formControlName="dataCredito">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card">
+            <p class="titulo" >Composição da Prestação Mensal</p>
+
+            <div style="display: flex; padding-left: 3px; padding-bottom: 8px; flex-direction: column;">
+
+              <div class="row novoInput">
+                <p class="afastamento">Prestação Para Base de Cálculos </p>
+                <input type="text" formControlName="valorBaseCalculo"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Atualização Monetária (INPC - IBGE) </p>
+                <input type="text" formControlName="valorCorrecaoMonetaria"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Fundo de Quitação Por Morte </p>
+                <input type="text" formControlName="valorFundoQuitacaoMorte"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Fundo de Liquidez </p>
+                <input type="text" formControlName="valorTaxaLiquidacao"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Prestação (Prévia Para o Primeiro Desconto) </p>
+                <input type="text" formControlName="valorParcelaPrestacao"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+            </div>
+            <!-- <p-messages class="informe" [(value)]="messages3" [enableService]="false" [closable]="false"></p-messages> -->
+            <span style="color:red; padding: 1rem; width: calc(100% - 2rem)!important; display: block;">
+              {{mensagemAlerta}}
+            </span>
+
+          </div>
+
+          <div class="card">
+            <p class="titulo" >Dados para Preenchimento do Formulário de Solicitação</p>
+
+            <div style="display: flex; padding-left: 3px; padding-bottom: 8px; flex-direction: column;">
+
+              <div class="row novoInput">
+                <p class="afastamento">Valor do Empréstimo 	</p>
+                <input type="text" formControlName="valorEmprestimo"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Prazo (em meses)	</p>
+                <input type="number" formControlName="prazo" style="text-align: right;">
+              </div>
+
+              <div class="row novoInput">
+                <p class="afastamento">Prestação Inicial (para base de cálculos) 	</p>
+                <input type="text" formControlName="valorPrestacaoInicial"  maxlength="14" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              </div>
+          </div>
+
+          <p-messages class="informe block" [(value)]="messages3" [enableService]="false" [closable]="false"></p-messages>
+
+
+
+          </div>
+
+          <p style="line-height: 2em; padding-top: 8px;">
+            <input type="checkbox" style="padding-top: 10px; margin-right: 8px;width: 14px; height: 14px;" formControlName="flagIndice">
+            Estou ciente das regras e valor relativo ao empréstimo e desejo por livre e espontânea vontade solicitá-lo.
+          </p>
+
+          <div style="text-align: right; margin-bottom: 12px;">
+            <button class="proximo" mat-button matStepperPrevious
+            style="color: white; background-color: #0e5c86; border-radius: 8px; margin-right: 8px; width: 7rem;">
+            <i class="fa-solid fa-chevron-left"></i>Voltar
+            </button> 
+            <button class="proximo"
+            [disabled]="!secondFormGroup.valid"
+            (click)="imprimeValoresSimulacao(stepper)"
+            mat-button matStepperNext style="color: white; background-color: #0e5c86; margin-right: 8px;  border-radius: 8px;">
+            Avançar<i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="proximo"
+            [disabled]="!secondFormGroup.valid"
+            mat-button matStepperNext style="color: white; background-color: #0e5c86; border-radius: 8px;">
+            Imprimir<i class="fa-solid fa-print"></i>
+            </button>
+          </div>
+        </form>
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Informações Complementares</ng-template>
+
+      <!-- <p-messages class="informe" [(value)]="messages4" [enableService]="false" [closable]="false"></p-messages> -->
+      <p-messages severity="info" summary="Informe">
+        <ng-template pTemplate>
+            <svg class="info-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_5)"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.11101 12.8203C4.26215 13.5895 5.61553 14 7 14C8.85652 14 10.637 13.2625 11.9497 11.9497C13.2625 10.637 14 8.85652 14 7C14 5.61553 13.5895 4.26215 12.8203 3.11101C12.0511 1.95987 10.9579 1.06266 9.67879 0.532846C8.3997 0.00303296 6.99224 -0.13559 5.63437 0.134506C4.2765 0.404603 3.02922 1.07129 2.05026 2.05026C1.07129 3.02922 0.404603 4.2765 0.134506 5.63437C-0.13559 6.99224 0.00303296 8.3997 0.532846 9.67879C1.06266 10.9579 1.95987 12.0511 3.11101 12.8203ZM3.75918 2.14976C4.71846 1.50879 5.84628 1.16667 7 1.16667C8.5471 1.16667 10.0308 1.78125 11.1248 2.87521C12.2188 3.96918 12.8333 5.45291 12.8333 7C12.8333 8.15373 12.4912 9.28154 11.8502 10.2408C11.2093 11.2001 10.2982 11.9478 9.23232 12.3893C8.16642 12.8308 6.99353 12.9463 5.86198 12.7212C4.73042 12.4962 3.69102 11.9406 2.87521 11.1248C2.05941 10.309 1.50384 9.26958 1.27876 8.13803C1.05367 7.00647 1.16919 5.83358 1.61071 4.76768C2.05222 3.70178 2.79989 2.79074 3.75918 2.14976ZM7.00002 4.8611C6.84594 4.85908 6.69873 4.79698 6.58977 4.68801C6.48081 4.57905 6.4187 4.43185 6.41669 4.27776V3.88888C6.41669 3.73417 6.47815 3.58579 6.58754 3.4764C6.69694 3.367 6.84531 3.30554 7.00002 3.30554C7.15473 3.30554 7.3031 3.367 7.4125 3.4764C7.52189 3.58579 7.58335 3.73417 7.58335 3.88888V4.27776C7.58134 4.43185 7.51923 4.57905 7.41027 4.68801C7.30131 4.79698 7.1541 4.85908 7.00002 4.8611ZM7.00002 10.6945C6.84594 10.6925 6.69873 10.6304 6.58977 10.5214C6.48081 10.4124 6.4187 10.2652 6.41669 10.1111V6.22225C6.41669 6.06754 6.47815 5.91917 6.58754 5.80977C6.69694 5.70037 6.84531 5.63892 7.00002 5.63892C7.15473 5.63892 7.3031 5.70037 7.4125 5.80977C7.52189 5.91917 7.58335 6.06754 7.58335 6.22225V10.1111C7.58134 10.2652 7.51923 10.4124 7.41027 10.5214C7.30131 10.6304 7.1541 10.6925 7.00002 10.6945Z" fill="currentColor"></path></g><defs><clipPath id="url(#pn_id_5)"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg>
+            <strong>Informe</strong>
+            <div class="ml-2">
+              <p>
+                Caso deseje solicitar o empréstimo os formulários que constam do link abaixo deverão ser preenchidos e encaminhados ao Nucleos, juntamente com a cópia dos seus três últimos contracheques.
+              </p>
+              <p>
+                Após a análise de toda a documentação com resultado positivo o empréstimo será creditado na conta corrente indicada pelo participante, observando-se o cronograma de disponibilização de créditos estabelecido pelo Nucleos.
+              </p>
+              <p>
+                Formulários para solicitação de empréstimo:
+              </p>
+              <ul>
+                <li><a class="link" href="http://192.100.100.129:2075/GSS-18SolicitacaodeEmprestimov1.5.pdf" target="_blank">Formulário de Solicitação</a></li>
+                <li><a class="link" href="http://192.100.100.129:2075/GSS-19EmprestimoAdesaov1.2.pdf" target="_blank">Formulário de Adesão</a></li>
+                <li><a class="link" href="http://192.100.100.129:2075/GSS-21AutorizacaodeDebitov1.5.pdf" target="_blank">Formulário de autorização de débito em conta corrente</a></li>
+              </ul>
+            </div>
+        </ng-template>
+    </p-messages>
+      <div class="caixa-botoes">
+        <button mat-button matStepperPrevious  style="color: white; background-color: #0e5c86; border-radius: 8px; margin-right: 8px">
+          <i class="fa-solid fa-chevron-left"></i>Voltar
+        </button>
+        <button mat-button (click)="enviaFormulario();stepper.reset()" style="color: white; background-color: #0e5c86; border-radius: 8px;">
+          Finalizar<i class="fa-solid fa-check"></i>
+        </button>
+      </div>
+      <p-toast></p-toast>

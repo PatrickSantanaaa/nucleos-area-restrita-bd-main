@@ -1,0 +1,51 @@
+<p-fieldset legend="Pessoa Exposta Politicamente (PEP)" class="field">
+  <p class="classP">Você, ou algum de seus familiares na linha reta até o 2° Grau (incluindo cônjugue, companheiro ou representantes),
+    é ou já foi (nos últimos cinco anos) pessoa policitamente exposta no País ou no Exteriror?
+  </p>
+
+  <mat-card class="m-top card">
+    <mat-card-subtitle>Politicamente Exposto</mat-card-subtitle>
+    <div class="card flex justify-content-start m-padding">
+      <div class="flex flex-wrap gap-3">
+          <div class="flex align-items-center">
+              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+              <label for="ingredient1" class="ml-2">Sim</label>
+          </div>
+
+          <div class="flex align-items-center">
+              <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient" inputId="ingredient2"></p-radioButton>
+              <label for="ingredient2" class="ml-2">Não</label>
+          </div>
+
+          <div class="flex align-items-center">
+            <p class="texto">Dúvidas sobre PEP? </p>
+
+            <button class="classbutton">
+              <p class="texto2">Clique aqui pra saber mais</p>
+            </button>
+          </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="card flex m-top">
+    <p-checkbox  [binary]="true" inputId="binary" [(ngModel)]="confirma"></p-checkbox>
+
+    <p class="texto3">Declaro estar ciente de que se eu ou qualquer familiar, conforme descrito acima, se enquadrar como Pessoa Politicamente
+      Exposta, fico inteiramente responsável pela comnunicação de tais fatos à Aceprev imediatamente, não responsabilizando a entidade por atos
+      que dela não dependam.
+    </p>
+  </div>
+
+  <div class="m-top">
+    <p class="classP">Conforme instrução Previc no 34, de 28 de outubro de 2020, art. 15, a definição de pessoa politicamente exposta é:
+      a pessoa natural que desempenha ou tenha desempenhado, nos cinco anos anteriores, cargo, emprego ou função pública.
+    </p>
+  </div>
+
+  <div class="flex m-top">
+    <button [ngClass]="{'buttonDisable': !confirma, 'classbutton2': confirma}" type="button">
+      <i class="fa-solid fa-check"></i> Salvar
+    </button>
+  </div>
+</p-fieldset>

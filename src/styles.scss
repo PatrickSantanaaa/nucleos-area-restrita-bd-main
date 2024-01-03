@@ -1,0 +1,179 @@
+@import 'node_modules/sysprev-recursos/src/assets/styles.scss';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+:root {
+  font-size: 85%;
+  --azul-primario: #0e5b85;
+  --azul-secundario: #0a4565;
+  --azul-action: rgba(53, 102, 166, .35);
+  --branco: #fff;
+  --cinza: #d0d0d0;
+  --preto: #282828;
+  --sucesso: #1ADB70;
+  --erro: #db2a1a;
+  --cuidado: #eaba00;
+  --border-radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+  font:  400 14px/15px 'poppins', sans-serif !important;
+  color: var(--gray-800);
+  display: inline;
+}
+
+h1 {
+  font-size: 2rem !important;
+}
+
+h2 {
+  font-size: 1.0rem !important;
+  margin-bottom: 0!important;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  color: #74788d;
+  cursor: pointer;
+}
+
+.rowRight {
+  display: flex;
+  justify-content: right;
+}
+
+.m-top{
+  margin-top: 1rem;
+}
+
+.m-right{
+  margin-right: 1rem !important;
+}
+
+.m-left{
+  margin-left: 1rem !important;
+}
+
+.m-bottom{
+  margin-bottom: 1rem !important;
+}
+
+.m-padding{
+  padding: 1rem !important;
+}
+
+.b-padding{
+  padding-bottom: 1rem !important;
+}
+
+.espacamento{
+  display: flex;
+  justify-content: space-between;
+}
+
+.espacamento2{
+  display: flex;
+  justify-content: center;
+}
+
+.espacamento3{
+  display: flex;
+  justify-content: left;
+}
+
+.desabilita {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--branco);
+  background: var(--cinza);
+  border-radius: 6px;
+}
+
+.buttonDisable{
+  background: var(--azul-primario);
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.5;
+  color:white;
+  pointer-events: none;
+}
+
+.field{
+  width: 72% !important;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.number{
+  text-align: end !important;
+  justify-content: end !important;
+}
+:host ::ng-deep.p-ripple .p-element .p-button .p-togglebutton .p-component .p-highlight{
+  width: 16em;
+  color: black;
+  padding: 4px;
+}
+
+.thInicial{
+  @extend .thMeio;
+  border-radius: 14px 0 0 0;
+  color: #fff;
+}
+
+.thMeio{
+  background: var(--azul-primario) !important;
+  color: #fff;
+  padding: 0 5px;
+}
+
+.thFinal{
+  @extend .thMeio;
+  border-radius: 0 14px 0 0;
+  color: #fff;
+}
+td {
+  padding: 0 5px;
+}
+
+:host ::ng-deep mat-accordion mat-expansion-panel {
+  background-color: #ffffff;
+}
+
+.shadow{
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+}
+
+::ng-deep .p-datatable>.p-datatable-wrapper {
+  border-radius: 14px;
+}
+
+.hidden{
+  visibility: hidden;
+}

@@ -1,0 +1,54 @@
+<p-fieldset legend="Contribuição" class="field tamanho">
+
+<form  [formGroup]="formulario">
+<mat-card class="card shadow tamanho">
+  <p-table [value]="dadosIniciais" [tableStyle]="{ 'min-width': '50rem' }" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="thInicial">Referência</th>
+        <th class="thMeio">Valor da Contribuição</th>
+        <th class="thMeio">Valor da Reserva de Poupança</th>
+        <th class="thMeio">índice de Atualização Monetária</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-dadosIniciais>
+      <tr>
+        <td class="saldo">03/2023</td>
+        <td class="saldo">292,03</td>
+        <td class="saldo">44.951,27</td>
+        <td class="saldo">0,64</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+    <div style="display: flex; flex-direction: column; margin-top: 2rem;">
+      <strong style="padding-left: 6px; font-size: 1.1rem;" >Total da Reserva de Poupança</strong>
+      <ul style="list-style: none; padding-left: 6px; margin-top: 20px;">
+        <li class="itens">Taxa Administrativa (15% sobre o total das constribuições):</li>
+        <li class="itens">Base Imposto de Renda:</li>
+        <li class="itens">Valor do Imposto de Renda:</li>
+      </ul>
+
+      <strong class="itens" style="margin-top: 15px; margin-left: 7px;">Reserva de Poupança Líquida:</strong>
+    </div>
+
+    <div class="div2" >
+      <strong style="padding-left: 6px; font-size: 1.1rem;">{{totalizadores[0]?.valorMovimentoParticipante | currency: 'BRL'}}</strong>
+      <ul style="list-style: none; padding-left: 6px; margin-top: 20px;">
+        <li class="itens">{{totalizadores[0]?.valorTaxaAdministracao | currency: 'BRL' }}</li>
+        <li class="itens">{{totalizadores[0]?.valorBaseImpostoRenda | currency: 'BRL'}}</li>
+        <li class="itens">{{totalizadores[0]?.valorImpostoderenda | currency: 'BRL'}}</li>
+      </ul>
+
+      <strong class="itens">{{totalizadores[0].valorLiquidacaoParticipante | currency: 'BRL'}}</strong>
+    </div>
+</mat-card>
+<div style="display: flex;justify-content: end;">
+  <button class="proximo" mat-button style="color: white; background-color: #0e5c86; margin-right: 8px;  border-radius: 8px;" (click)="enviaFormulario()">
+  Extrato Completo
+  </button>
+</div>
+</form>
+</p-fieldset>
+
+<p-toast></p-toast>

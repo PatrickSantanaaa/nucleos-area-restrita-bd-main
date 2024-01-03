@@ -1,0 +1,82 @@
+:host ::ng-deep.field {
+  width: auto !important;
+}
+
+.tamanho {
+  height: 260px !important;
+}
+
+.proximo {
+  color: white!important; background-color: #0e5c86!important; border-radius: 8px!important;
+  margin-top: 12px;
+  display: flex;
+  justify-content: end;
+  &:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+}
+
+.thMeio{
+  background: var(--azul-primario) !important;
+  color: var(--branco);
+  padding: 0 5px;
+}
+
+.saldo {
+  text-align: right !important;
+  padding: 0px 10px;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 8px;
+  position: relative;
+  bottom: 148px;
+}
+
+.itens {
+  margin-top: 1rem;
+}
+
+.zebrado {
+  background-color: #f0f0f0; /* Substitua pela cor desejada */
+}
+
+:host ::ng-deep.p-datatable-tbody {
+  background-color: #0e5c8641 !important;
+}
+
+.nao-zebrado {
+  background-color: #ffffff; /* Substitua pela cor desejada */
+}
+
+.thInicial{
+  @extend .thMeio;
+  border-radius: 14px 0 0 0;
+}
+
+.thFinal{
+  @extend .thMeio;
+  border-radius: 0 14px 0 0;
+}
+
+td {
+  padding: 0 5px;
+}
+
+:host ::ng-deep mat-accordion mat-expansion-panel {
+  background-color: #ffffff;
+}
+
+.shadow{
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+}
+
+::ng-deep .p-datatable>.p-datatable-wrapper {
+  border-radius: 14px;
+}

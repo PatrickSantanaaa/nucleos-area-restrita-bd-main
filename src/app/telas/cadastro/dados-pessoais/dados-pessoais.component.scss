@@ -1,0 +1,53 @@
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+:host ::ng-deep .mat-column-nomeDependente {
+  width: 35%;
+}
+
+:host ::ng-deep .mat-column-codigoParentesco {
+  width: 25%;
+}
+
+:host ::ng-deep .mat-column-numeroCPFDependente {
+  width: 20%;
+}
+
+:host ::ng-deep .mat-column-dataNascimento{
+  width: 15%;
+}
+
+:host ::ng-deep .mat-column-acoes,
+:host ::ng-deep .mat-column-tipoSexoDependente,
+:host ::ng-deep .mat-column-tipoSexoDependente {
+  width: 8%;
+}
+
+:host ::ng-deep .crud[_ngcontent-ng-c922814657] .crud-header[_ngcontent-ng-c922814657]{
+  background: linear-gradient(to right, #0E5B85, rgb(17, 38, 118)) rgb(255, 255, 255);
+}
+
+:host ::ng-deep .p-badge {
+  background: var(--azul-primario);
+}
+
+:host ::ng-deep .p-badge:hover {
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition: 0.4s ease;
+}
+

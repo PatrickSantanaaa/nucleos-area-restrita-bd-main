@@ -1,0 +1,60 @@
+<p-fieldset legend="Consulta Saldo Devedor" class="field tamanho">
+
+  <mat-card class="shadow">
+
+  <div style="display: flex;">
+    <fieldset class="input100" style="height: 100px; margin-left: 10px">
+      <legend style="font-size: 1.2rem;">Dados do Contrato</legend>
+
+        <div>
+          <p style="margin-top: 10px;">Data de Concessão: <strong >{{ listaSaldo.dataCredito | date : 'dd/MM/yyyy'}}</strong></p>
+          <p>Indexador:   <strong>{{listaSaldo.descricaoIndice}}</strong>	</p>
+          <p>Prestação Inicial:  <strong>R$529,15</strong>	</p>
+        </div>
+
+        <div style="  justify-content: center;display: flex; align-items: end; bottom: 108%; position: relative; flex-direction: column;">
+          <p style="margin-top: 10px;">Valor Concedido:  <strong>{{ listaSaldo.valorSolicitado | currency: 'BRL'}}</strong></p>
+          <div style="display: flex; gap: 4rem">
+            <p>Prazo:   <strong>{{ listaSaldo.quantidadePrazo }}</strong> </p><p>      Restante:   <strong>{{ listaSaldo.quantidadePrazoRestante }}</strong></p>
+          </div>
+          <p>Saldo Devedor Atual:  <strong>{{ service.dadosGerais.valorSaldoDevedor | currency: 'BRL'}}</strong></p>
+        </div>
+    </fieldset>
+  </div>
+
+  <p-table [value]="listaLista" [tableStyle]="{ 'min-width': '50rem' }" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="thInicial">Mês</th>
+        <th class="thMeio">Ref. Parcela</th>
+        <th class="thMeio">Receb.</th>
+        <th class="thMeio">Saldo Anterior</th>
+        <th class="thMeio">Atualiz. Monetária</th>
+        <th class="thMeio">Juros</th>
+        <th class="thMeio">FQM</th>
+        <th class="thMeio">Taxa Lqz</th>
+        <th class="thMeio">Prestação Paga</th>
+        <th class="thMeio">Amortiz. Saldo	</th>
+        <th class="thFinal">Saldo Devedor</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-listaLista>
+      <tr>
+        <td>{{ listaLista.mesReferencia | formataMesAno}}</td>
+        <td>{{ listaLista.referenciaParcela | formataMesAno}}</td>
+        <td>{{ listaLista.dataRecebimento }}</td>
+        <td class="saldo">{{ listaLista.saldoDevedorInicial | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.valorCorrecaoMonetaria | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.juros | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.fqm | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.fundoLiquidez | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.valorParcelaPagamento | currency: 'BRL'}}</td>
+        <td class="saldo">{{ listaLista.valorAmortizacao | currency: 'BRL'}}</td>
+        <td class="saldo">{{ service.dadosGerais.valorSaldoDevedor | currency: 'BRL'}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</mat-card>
+</p-fieldset>
+
+<p-toast></p-toast>

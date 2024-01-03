@@ -1,0 +1,58 @@
+<mat-toolbar>
+  <div style="width: 194px;  background-color: white; padding: 38px 15px 0px 32px;  height: 106px;  border-top-right-radius: 65%;border-top-right-radius: 65%;
+    border-bottom-right-radius: 65%;">
+    <img src="./assets/img/logo.png" height="30"/>
+    </div>
+
+    <nav id="menu">
+      <div [class]="'menu-item inside-menu-'+menu.tipoItemMenu" [id]="'menu-item-'+menu.tipoItemMenu"
+      (mouseover)="addHoverClass($event)"
+      (mouseout)="removeHoverClass($event)"
+      *ngFor="let menu of listaMenu">
+          <div [class]="'menu-text inside-menu-'+menu.tipoItemMenu">
+              <a [class]="'inside-menu inside-menu-'+menu.tipoItemMenu">{{menu.descricaoMenu}}</a>
+          </div>
+          <div [class]="'sub-menu listaCompleta inside-menu-'+menu.tipoItemMenu" >
+            <div [class]="'text itensdaLista inside-menu-'+menu.tipoItemMenu"
+            *ngFor="let submenu of menu.submenu"
+            (click)="limparHover(menu.tipoItemMenu)"
+            style="padding-bottom: 10px;"
+            [routerLink]="montaUrl(menu.descricaoMenu, submenu.descricaoUrlMenu)">
+
+                <i [class]="submenu.descricaoIconeMenu + ' icones inside-menu-' + menu.tipoItemMenu" style="color: #ffffff;"></i>
+                <div [class]="'inside-menu-'+menu.tipoItemMenu">
+                  <div [class]="'title inside-menu-'+menu.tipoItemMenu">{{submenu.descricaoItemMenu}}</div>
+                  <div [class]="'descricao inside-menu-'+menu.tipoItemMenu" >{{submenu.descricaoSubItemMenu}}</div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </nav>
+
+
+    <div class="espacamento3">
+      <div class="saldo">
+        <span style="font-size: .875rem;">Saldo Atual</span>
+        <div class="espacamento">
+          <!-- <span class="cifrao">R$</span> -->
+          <span *ngIf="mostrarSaldo" class="valor">{{saldoAtual | currency: 'BRL'}}</span>
+          <span *ngIf="!mostrarSaldo" class="valor">****</span>
+          <i (click)="toggleMostrarSaldo()" *ngIf="mostrarSaldo" class="fa-solid fa-eye olho"></i>
+          <i (click)="toggleMostrarSaldo()" *ngIf="!mostrarSaldo" class="fa-solid fa-eye-slash olho"></i>
+        </div>
+      </div>
+
+      <div class="icone" >
+        <button mat-button [matMenuTriggerFor]="menu" class="buttonMenu" >
+          <i class="fa-solid fa-circle-user"></i>
+          <div class="usuario" >
+            <span class="texto">Seja bem Vindo(a),</span>
+            <h3 class="texto">{{ nomeUsu ? nomeUsu.charAt(0).toUpperCase() + nomeUsu.slice(1).toLowerCase() : '' }}</h3>
+          </div>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">Sair</button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-toolbar>

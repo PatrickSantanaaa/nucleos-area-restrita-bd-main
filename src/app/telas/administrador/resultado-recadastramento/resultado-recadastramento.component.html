@@ -1,0 +1,87 @@
+<p-fieldset legend="Resultado do Recadastramento" class="field tamanho">
+
+  <form [formGroup]="formulario">
+    <fieldset >
+      <legend>Período</legend>
+        <div class="caixa">
+          <p class="p-text">Inicial</p>
+          <input type="date" formControlName="inicial" class="input10 input-text" style="padding-right: 10px;">
+
+          <p class="p-text">Final</p>
+          <input type="date" formControlName="final" class="input10 input-text" style="padding-right: 10px;" >
+
+          <button (click)="apareceGrid($event)">
+            <p>Visualizar</p>
+            <i class="fa-solid fa-magnifying-glass" style="color: white"></i>
+          </button>
+      </div>
+    </fieldset>
+
+    <mat-card class="shadow" style="margin-top: 1.5% !important;" *ngIf="mostraGrid">
+      <p-table [value]="listaLista" [tableStyle]="{ 'min-width': '30rem','padding-top': '1.5%','width': '100%'}">
+        <ng-template pTemplate="header">
+            <tr style="position: relative; bottom: 20px; height: 32px;">
+                <th class="thInicial" style="border-right: 1px solid white;"></th>
+                <th class="ano thMeio"></th>
+                <th class="ano thMeio"><p style="margin-left: 27px; margin-top: 13px;">Enviados</p></th>
+                <th class="mes thMeio" style="border-right: 1px solid white;"></th>
+                <th class="mes thMeio"></th>
+                <th class="mes thMeio"><p  style="margin-left: 31px; margin-top: 13px;">Recebidos</p></th>
+                <th class="mes thMeio" style="border-right: 1px solid white;"></th>
+                <th class="mes thMeio"></th>
+                <th class="mes thMeio"><p style="margin-left: 31px; margin-top: 13px;">Faltantes</p></th>
+                <th class="mes thMeio"></th>
+                <th class="mes thMeio"></th>
+                <th class="mes thFinal"></th>
+            </tr>
+            <tr style="position: relative; bottom: 20px; height: 32px;">
+                <th class="thInicial" style="border-right: 1px solid white;">Patrocinadora</th>
+                <th class="mes thMeio"><p style="margin-left: 20px; margin-top: 12px;">Ativo</p></th>
+                <th class="mes thMeio"><p style="margin-left: 17px; margin-top: 12px;">Aposentado</p></th>
+                <th class="mes thMeio" style="border-right: 1px solid white;"><p style="margin-right: 12px; margin-top: 12px;">Pensionista</p></th>
+                <th class="mes thMeio"><p style="margin-left: 22px; margin-top: 12px;">Ativo</p></th>
+                <th class="mes thMeio"><p style="margin-left: 23px; margin-top: 12px;">Aposentado</p></th>
+                <th class="mes thMeio" style="border-right: 1px solid white;"><p style="margin-right: 12px; margin-top: 13px; margin-left: 2px;">Pensionista</p></th>
+                <th class="mes thMeio"><p style="margin-left: 20px; margin-top: 12px;">Ativo</p></th>
+                <th class="mes thMeio"><p style="margin-left: 17px; margin-top: 12px;">Aposentado</p></th>
+                <th class="mes thMeio">Pensionista</th>
+                <th class="mes thMeio"></th>
+                <th class="mes thFinal"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-listaLista>
+            <tr>
+              <td class="mes">{{ listaLista.descricaoPatrocinadora }}</td>
+              <td class="mes">{{ listaLista.numeroEnviadoAtivo }}</td>
+              <td class="mes">{{ listaLista.numeroEnviadoApos }}</td>
+              <td class="mes">{{ listaLista.numeroEnviadoPensaoalimenticia }}</td>
+              <td class="mes">{{ listaLista.numeroFalecidoAtivo }}</td>
+              <td class="mes">{{ listaLista.numeroFalecidoApos }}</td>
+              <td class="mes">{{ listaLista.numeroFalecidoPensaoalimenticia }}</td>
+              <td class="mes">{{ listaLista.numeroRecebedorAtivo }}</td>
+              <td class="mes">{{ listaLista.numeroRecebedorPensaoalimenticia }}</td>
+              <td class="mes">{{ listaLista.numeroRecebedorApos }}</td>
+              <td class="mes"></td>
+              <td class="mes"></td>
+            </tr>
+          </ng-template>
+          <!-- <ng-template pTemplate="footer">
+            <tr>
+              <td class="tempoTotal">Tempo Total</td>
+              <td class="mes" style="width: 25px;">{{ resultadoTotal.descricaoPatrocinadora }}</td>
+              <td class="mes">{{ resultadoTotal.numeroEnviadoAtivo }}</td>
+              <td class="mes">{{ resultadoTotal.numeroEnviadoApos }}</td>
+              <td class="mes">{{ resultadoTotal.numeroEnviadoPensaoalimenticia }}</td>
+              <td class="mes">{{ resultadoTotal.numeroFalecidoAtivo }}</td>
+              <td class="mes">{{ resultadoTotal.numeroFalecidoApos }}</td>
+              <td class="mes">{{ resultadoTotal.numeroFalecidoPensaoalimenticia }}</td>
+              <td class="mes">{{ resultadoTotal.numeroRecebedorAtivo }}</td>
+              <td class="mes">{{ resultadoTotal.numeroRecebedorPensaoalimenticia }}</td>
+              <td class="mes">{{ resultadoTotal.numeroRecebedorApos }}</td>
+            </tr>
+          </ng-template> -->
+      </p-table>
+    </mat-card>
+  </form>
+</p-fieldset>
+

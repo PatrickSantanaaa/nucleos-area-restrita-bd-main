@@ -1,0 +1,400 @@
+<p-fieldset legend="Recadastramento" class="field tamanho">
+
+  <mat-tab-group>
+    <mat-tab label="Informações existentes no cadastro do Nucleos">
+      <div class="rows">
+    <div>
+      <div class="column">
+        <p class="p-text">Patrocinadora:<strong></strong></p>
+        <input type="text" class="input-text" value="{{dadosGerais.descricaoPatrocinadora}}" style="width: 29rem" [disabled]="true">
+      </div>
+    </div>
+
+      <div class="column">
+        <p class="p-text">Matrícula Funcional:</p>
+        <input type="text" value="{{dadosGerais.numeroMatricula}}" class="input-text input17" [disabled]="true">
+      </div>
+
+      <div class="column">
+        <p class="p-text">Inscrição Nucleos:</p>
+        <input type="text" value="{{dadosGerais.numeroInscricao}}" class="input-text input16" [disabled]="true">
+      </div>
+
+      <div class="column">
+        <p class="p-text">Situação no Plano:</p>
+        <input type="text" value="{{dadosGerais.descricaoSituacaoPlano}}" class="input-text input10" [disabled]="true">
+      </div>
+
+    </div>
+
+      <div class="rows" style="align-items: self-end;">
+
+        <div class="column">
+          <p class="p-text">Nome Completo: <strong>{{dadosGerais.nome}}</strong></p>
+          <input type="text" class="input-text" style="width: 29rem">
+        </div>
+
+      <div class="column">
+        <p class="p-text">Nacionalidade:<strong>{{dadosGerais.descricaoNacionalidade}}</strong></p>
+        <input type="text" class="input-text input16" >
+      </div>
+
+
+      <div class="column">
+        <p class="p-text">Sexo: <strong>{{dadosGerais.tipoSexo}}</strong></p>
+      <fieldset style="margin: 0">
+        <input id='Mascunlino' type='radio' name='selection' style="margin-left: 5px;">
+        <label for='red' value="Mascunlino  " style="padding-left: 5px;">Mascunlino</label>
+
+        <input id='Feminino' type='radio' name='selection' style="margin-left: 5px;">
+        <label for='red' style="padding-left: 5px;">Feminino</label>
+      </fieldset>
+      </div>
+
+    </div>
+
+      <div class="rows">
+        <div class="column">
+          <p class="p-text">CPF:<strong>{{dadosGerais.login}}</strong></p>
+          <input type="text" class="input-text input10">
+        </div>
+
+        <div class="column" >
+          <p class="p-text">Data de Nascimento:<strong>{{dadosGerais.dataNascimento | date : 'dd/MM/yyyy'}}</strong></p>
+          <input type="date" class="input-text input12">
+
+        </div>
+
+        <div class="column">
+          <p class="p-text">Naturalidade:<strong>{{dadosGerais.descricaoNatureza}}</strong></p>
+          <input type="text" class="input-text" style="width: 16.2rem">
+        </div>
+      </div>
+
+    <div class="rows">
+      <div class="column">
+        <p class="p-text">Doc. de identificação:<strong>{{dadosGerais.numeroIdentidade}}</strong></p>
+        <input type="text" class="input-text" style="width: 10rem;">
+      </div>
+
+      <div class="column">
+        <p class="p-text">Órgão expedidor:<strong>{{dadosGerais.nomeOrgaoExperienciaIdentidade}}</strong></p>
+        <input type="text" class="input-text" style="width: 7rem;">
+      </div>
+
+      <div class="column">
+        <p class="p-text">Data de Expedição:<strong>{{dadosGerais.dataExperienciaIdentidade | date : 'dd/MM/yyyy'}}</strong></p>
+        <input type="date" class="input-text input11">
+      </div>
+
+      <div class="column">
+        <p style="margin-left: 8px;">UF: <strong>{{dadosGerais.siglaUnidadefederacaoExperienciaIdentidade}}</strong></p>
+          <select class="combo">
+            <option></option>
+            <option value="RJ">RJ</option>
+            <option value="MG">MG</option>
+            <option value="SP">SP</option>
+          </select>
+      </div>
+
+
+      <div class="column">
+        <p class="p-text">Endereço: <strong>{{dadosGerais.descricaoLogradouro}}</strong></p>
+        <input type="text" class="input-text" style="width: 18rem !important;">
+      </div>
+
+    </div>
+
+      <div class="rows">
+
+      <div class="column">
+        <p class="p-text">Número:<strong>{{dadosGerais.numeroLogradouro}}</strong></p>
+        <input type="text" class="input-text input6" >
+      </div>
+
+      <div class="column">
+        <p class="p-text">Complemento: <strong>{{dadosGerais.descricaoComplemento}}</strong></p>
+        <input type="text" class="input-text input12">
+      </div>
+
+      <div class="column">
+        <p class="p-text">CEP: <strong>{{dadosGerais.numeroCep}}</strong></p>
+        <input type="text" class="input-text input8">
+      </div>
+
+    </div>
+
+    <div class="rows">
+      <div class="column">
+        <p class="p-text">E-mail:<strong>{{dadosGerais.descricaoEmail}}</strong></p>
+        <input type="text" class="input-text input20" >
+      </div>
+
+      <div class="column">
+        <p class="p-text">E-mail Alternativo:<strong>{{dadosGerais.descricaoEmailAlternativo}}</strong></p>
+        <input type="text" class="input-text input22"  >
+      </div>
+    </div>
+
+      <div class="rows">
+
+
+      <div class="column">
+        <p class="p-text">Telefone Residencial:<strong>{{dadosGerais.numeroTelefoneResidencial}}</strong></p>
+        <input type="text" class="input-text input14  " >
+      </div>
+
+      <div class="column">
+        <p class="p-text">Telefone Celular:<strong>{{dadosGerais.numeroTelefoneCelular}}</strong></p>
+        <input type="text" class="input-text input14" >
+      </div>
+
+      <div class="column">
+        <p class="p-text">Ocupação Profissional:<strong></strong></p>
+        <input type="text" class="input-text input14" >
+      </div>
+
+      <div class="column">
+        <p class="p-text">Setor:<strong></strong></p>
+        <input type="text" class="input-text input14" >
+      </div>
+
+      </div>
+
+      <div class="rows">
+        <div class="column">
+          <p class="p-text">Estado Civil:<strong> {{dadosGerais.descricaoEstadoCivil}}</strong></p>
+          <input type="text" class="input-text input14" >
+        </div>
+
+        <div class="column">
+          <p class="p-text">Nome do Cônjuge:<strong>{{dadosGerais.nomeConjuge}}</strong></p>
+          <input type="text" class="input-text input30" >
+        </div>
+
+      </div>
+
+
+      <div  style="display: flex; padding-top: 1.5rem;">
+        <p class="p-text">Você é reportável a FATCA ? <a href="http://192.100.100.129:2075/fatca.pdf" target="_blank">(Ver anexo)</a></p>
+        <mat-slide-toggle class="toggle menu" color="primary" formControlName="inativo" labelPosition="before" style="position: relative; bottom: 8px">
+        </mat-slide-toggle>
+      </div>
+
+    <div style="display: flex; justify-content: end;">
+      <button class="proximo" mat-button>Confirmar <i class="fa-solid fa-check" style="color: white"></i>
+      </button>
+    </div>
+
+    </mat-tab>
+
+    <mat-tab label="Declaração de Pessoa Exposta Politicamente">
+
+    <div class="column">
+      <p class="p-text" style="margin-top: 25px;">Enquadramento:</p>
+    <fieldset style="margin: 0; width: 20%;">
+      <input id='Mascunlino' type='radio' name='selection' style="margin-left: 5px;">
+      <label for='red' value="Mascunlino  " style="padding-left: 5px;">Não exposta</label>
+
+      <input id='Feminino' type='radio' name='selection' style="margin-left: 5px;">
+      <label for='red' style="padding-left: 5px;">Exposta</label>
+    </fieldset>
+    </div>
+
+      <p-toast></p-toast>
+
+
+    <mat-card class="shadow" style="margin-top: 1rem;">
+      <p-table  [value]="products" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+          <ng-template pTemplate="header">
+              <tr style="width: 100%">
+                  <th class="thInicial">Seq.</th>
+                  <th class="thMeio">Enq. (*)</th>
+                  <th class="thMeio">Relac. (*)</th>
+                  <th class="thMeio">Nome</th>
+                  <th class="thMeio">CPF</th>
+                  <th class="thMeio">Cargo</th>
+                  <th class="thMeio">Data de Término</th>
+                  <th class="thFinal"></th>
+              </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
+              <tr [pEditableRow]="product">
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.code">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.code}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.name" required>
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.name}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="product.inventoryStatus">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.inventoryStatus}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.price">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.price | currency: 'USD'}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.price">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.price | currency: 'USD'}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.price">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.price | currency: 'USD'}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="product.price">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{product.price | currency: 'USD'}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <div class="flex align-items-center justify-content-center gap-2">
+                          <!-- <button *ngIf="!editing" pButton pRipple type="button" icon="pi pi-trash"  (click)="deleteSelectedProducts()"></button> -->
+                          <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(product)" class="p-button-rounded p-button-text"></button>
+                          <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-trash" (click)="deleteSelectedProducts()" class="p-button-rounded p-button-text"></button>
+                          <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(product)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                          <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(product, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                      </div>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+    </mat-card>
+
+    </mat-tab>
+    <mat-tab label="Beneficiários previdenciários (reconhecidos pelo INSS)">
+
+    <div style="padding-top: 2%;">
+      <input type="checkbox">Não possuo Beneficiários
+    </div>
+
+    <p-toast></p-toast>
+
+  <mat-card style="margin-top: 1rem;">
+    <p-table [value]="products" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="thInicial" style="width:20%">Seq</th>
+                <th class="thMeio" style="width:20%">Nome</th>
+                <th class="thMeio"style="width:20%">CPF</th>
+                <th class="thMeio"style="width:20%">Data de Nascimento</th>
+                <th class="thMeio"style="width:20%">Beneficiários</th>
+                <th class="thFinal"style="width:20%"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="product">
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="product.code">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{product.code}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="product.name" required>
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{product.name}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                          <input pInputText type="text" [(ngModel)]="product.inventoryStatus">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{product.inventoryStatus}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="product.price">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{product.price | currency: 'USD'}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="product.price">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{product.price | currency: 'USD'}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <div class="flex align-items-center justify-content-center gap-2">
+                        <!-- <button *ngIf="!editing" pButton pRipple type="button"  icon="pi pi-trash"  (click)="deleteSelectedProducts()" ></button> -->
+                        <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(product)" class="p-button-rounded p-button-text"></button>
+                        <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-trash" (click)="deleteSelectedProducts()" class="p-button-rounded p-button-text"></button>
+                        <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(product)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                        <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(product, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+  </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+
+  </p-fieldset>
+
+  <p-toast></p-toast>

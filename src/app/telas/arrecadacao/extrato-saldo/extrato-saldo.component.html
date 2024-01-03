@@ -1,0 +1,25 @@
+<p-fieldset legend="Extrato de Saldo Individual" class="field tamanho">
+<form [formGroup]="formulario">
+<div style="    justify-content: center; display: flex; padding-bottom: 25px;">
+  <div>
+    <mat-form-field appearance="outline" class="input8">
+      <mat-label>De</mat-label>
+      <input formControlName="de" placeholder="mm/aaaa" matInput type="text" mask="00/0000">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field appearance="outline" class="input8">
+      <mat-label>Até</mat-label>
+      <input formControlName="ate" placeholder="mm/aaaa" matInput type="text" mask="00/0000">
+    </mat-form-field>
+  </div>
+</div>
+<div class="flex m-top">
+  <button type="button" class="classbutton" (click)="gerarExtrato()">
+    <i class="fa-solid fa-check"></i> Gerar PDF
+  </button>
+</div>
+
+</form>
+</p-fieldset>
+<p-toast></p-toast>

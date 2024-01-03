@@ -1,0 +1,200 @@
+<p-fieldset legend="Resumo do Plano" class="field">
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Adesão ao Plano</mat-panel-title><!-- titilo -->
+      </mat-expansion-panel-header><!-- conteudo -->
+        <div>
+          <p-table [value]="service.products" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Patrocinadora</th>
+                    <th>Matrícula</th>
+                    <th>Início Vigência</th>
+                    <th>Situação Previdência</th>
+                    <th>Tributação</th>
+                    <th>Tempo Contribuição</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{ product.patrocinadora }}</td>
+                <td>{{ product.matricula }}</td>
+                <td>{{ product.vigencia }}</td>
+                <td>{{ product.situacao }}</td>
+                <td>{{ product.tributacao }}</td>
+                <td>{{ product.tempo }}</td>
+            </tr>
+            </ng-template>
+          </p-table>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Perfil de Investimento</mat-panel-title><!-- titilo -->
+      </mat-expansion-panel-header><!-- conteudo -->
+        <div>
+          <p-table [value]="service.products2" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Perfil</th>
+                    <th>Início Vigência</th>
+                    <th>Percentual de Participação</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{ product.perfil }}</td>
+                <td>{{ product.vigencia }}</td>
+                <td>{{ product.percentual }}</td>
+            </tr>
+            </ng-template>
+          </p-table>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Custeio Individual no Plano</mat-panel-title><!-- titilo -->
+      </mat-expansion-panel-header><!-- conteudo -->
+        <div>
+          <p-table [value]="service.products3" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Conta</th>
+                    <th>Início Vigência</th>
+                    <th>Percentual de Contribuição</th>
+                    <th>Contribuição</th>
+                    <th>Fator</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{ product.conta }}</td>
+                <td>{{ product.vigencia }}</td>
+                <td>{{ product.percentual }}</td>
+                <td>{{ product.contribuicao }}</td>
+                <td>{{ product.fator }}</td>
+            </tr>
+            </ng-template>
+          </p-table>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Custeio Individual por Faixa</mat-panel-title><!-- titilo -->
+      </mat-expansion-panel-header><!-- conteudo -->
+      <div>
+        <p-table [value]="service.products4" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Faixa</th>
+                  <th>Início Vigência</th>
+                  <th>Percentual de Contribuição</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{ product.faixa }}</td>
+              <td>{{ product.vigencia }}</td>
+              <td>{{ product.percentual }}</td>
+          </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div class="flex m-top center" >
+    <div>
+    <button type="button" class="classbuttonResumo" (click)="planoTrue()">
+      <i class="fa-solid fa-check"></i> Alterar Informações de Seu Plano
+    </button>
+
+    <button type="button" class="classbuttonResumo buttonDisable">
+      <i class="fa-solid fa-check"></i> Histórico de Participação
+    </button>
+    </div>
+    <div>
+    <button type="button" class="classbuttonResumo">
+      <i class="fa-solid fa-check"></i> Atualizar
+    </button>
+
+    <button type="button" class="classbuttonResumo">
+      <i class="fa-solid fa-check"></i> Emitir o seu Certificado de Participante
+    </button>
+    </div>
+  </div>
+</p-fieldset>
+
+<div class="b-padding m-top" *ngIf="alterarPlano">
+  <p-fieldset legend="Informações do Plano" class="field">
+    <p>Você pode escolher o regime de tributação no seu plano de previdência complementar. Essa decisão deve ser tomada até o último dia útil
+      do mês subsequente ao dia de sua adesão. <b>Caso não faça sua escolha até a data limite, você automaticamente ficará no regime progressivo.</b>
+    </p>
+    <p>Abaixo você confere o seu custeio atual e tem a possibilidade de alterar, de acordo com o regulamento do seu plano de benefícios.</p>
+
+    <div>
+      <mat-form-field appearance="outline" class="input20" [ngClass]="{'desabilita': readyonly}">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" [disabled]="readyonly">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="input16" [ngClass]="{'desabilita': readyonly}">
+        <mat-label>Plano</mat-label>
+        <input matInput type="text" [disabled]="readyonly">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" class="input20">
+        <mat-label>Regime de Tributação</mat-label>
+          <mat-select>
+            <mat-option value="1"><p>1</p></mat-option>
+            <mat-option value="2"><p>2</p></mat-option>
+            <mat-option value="3"><p>3 </p></mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-card class="m-top card">
+      <mat-card-subtitle>Conta de Participante</mat-card-subtitle>
+
+      <div class="espacamento3">
+        <p class="textoB">Básica</p>
+
+        <mat-form-field appearance="outline" class="input14" [ngClass]="{'desabilita': readyonly}">
+          <mat-label>% Atual</mat-label>
+          <input matInput type="text" [disabled]="readyonly" class="number" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input14">
+          <mat-label>Novo</mat-label>
+          <input matInput type="text" class="number" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+      </div>
+
+      <div class="espacamento3 m-top">
+        <p class="textoA">Adicional</p>
+
+        <mat-form-field appearance="outline" class="input14" [ngClass]="{'desabilita': readyonly}">
+          <mat-label>% Atual</mat-label>
+          <input matInput type="text" [disabled]="readyonly" class="number" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input14">
+          <mat-label>Novo</mat-label>
+          <input matInput type="text" class="number" currencyMask  [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <div class="flex m-top">
+      <button type="button" class="classbutton" (click)="planoFalse()">
+        <i class="fa-solid fa-check"></i> Salvar
+      </button>
+    </div>
+  </p-fieldset>
+</div>

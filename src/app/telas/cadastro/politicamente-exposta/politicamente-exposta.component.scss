@@ -1,0 +1,50 @@
+.classbutton {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 75%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+.classbutton2 {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.classbutton2:hover{
+  background-color: var(--azul-secundario);
+  color: var(--branco);
+  transition:  0.4s ease;
+}
+
+.texto{
+  margin: 0 0 0 60px;
+  width: 200px;
+}
+
+.texto2{
+  margin-top: 10px;
+}
+
+.texto3{
+  margin: 0 0 0 5px;
+}
+
+.card{
+  padding: 20px;
+}
